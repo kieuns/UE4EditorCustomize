@@ -2,22 +2,22 @@
 
 #pragma once
 
-#include "UE4EditorCustomize.h"
+#include "UE5EditorCustomize.h"
 #include <IDetailCustomization.h>
 
 /**
- * 
+ *
  */
-class UE4ECSettingsCustomization :public IDetailCustomization
+class UE5ECSettingsCustomization :public IDetailCustomization
 {
 public:
-	UE4ECSettingsCustomization();
-	~UE4ECSettingsCustomization();
-	
+	UE5ECSettingsCustomization();
+	~UE5ECSettingsCustomization();
+
 	virtual void CustomizeDetails(IDetailLayoutBuilder& DetailLyoutBuilder) override;
 };
 
-/*class UE4ECCustomStyleEditorCustomization :public IDetailCustomization
+/*class UE5ECCustomStyleEditorCustomization :public IDetailCustomization
 {
 	// Inherited via IDetailCustomization
 	virtual void CustomizeDetails(IDetailLayoutBuilder& DetailBuilder) override;

@@ -2,8 +2,8 @@
 	"FileVersion": 3,
 	"Version": 9,
 	"VersionName": "1.5",
-	"FriendlyName": "UE4Editor Customize",
-	"Description": "Change UE4Editor To a New Style.",
+	"FriendlyName": "UE5Editor Customize",
+	"Description": "Change UE5Editor To a New Style.",
 	"Category": "Editor",
 	"CreatedBy": "JackMyth",
 	"CreatedByURL": "http://jackmyth.cn",
@@ -15,7 +15,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "UE4EditorCustomize",
+			"Name": "UE5EditorCustomize",
 			"Type": "Editor",
 			"LoadingPhase": "Default",
 			"WhitelistPlatforms": [

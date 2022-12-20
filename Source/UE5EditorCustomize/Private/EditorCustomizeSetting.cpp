@@ -4,7 +4,7 @@
 #include "SlateMaterialBrush.h"
 #include "Materials/MaterialInterface.h"
 #include "EditorStyleSet.h"
-#include "Classes/EditorStyleSettings.h"
+#include "Settings/EditorStyleSettings.h"
 #include <Styling/SlateTypes.h>
 #include <Styling/SlateStyle.h>
 
@@ -112,7 +112,7 @@ void UEditorCustomizeSetting::InitTextStyle()
 	Log_Normal = FEditorStyle::GetWidgetStyle<FTextBlockStyle>("Log.Normal");
 }
 
-void UEditorCustomizeSetting::InitCustomStyle(FSlateStyleSet* SlateStyleSet, FUE4ECCustomStyle& CustomStyle)
+void UEditorCustomizeSetting::InitCustomStyle(FSlateStyleSet* SlateStyleSet, FUE5ECCustomStyle& CustomStyle)
 {
 	//SlateBrush is already inited outside.
 	for (auto& curFontInfo : CustomStyle.SlateFontInfo)

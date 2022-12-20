@@ -12,20 +12,20 @@
 #include <SNameComboBox.h>
 #include <../Private/PropertyNode.h>
 
-#define LOCTEXT_NAMESPACE "FUE4EditorCustomizeModule"
+#define LOCTEXT_NAMESPACE "FUE5EditorCustomizeModule"
 
-UE4ECSettingsCustomization::UE4ECSettingsCustomization()
+UE5ECSettingsCustomization::UE5ECSettingsCustomization()
 {
 }
 
-UE4ECSettingsCustomization::~UE4ECSettingsCustomization()
+UE5ECSettingsCustomization::~UE5ECSettingsCustomization()
 {
 }
 
-void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLyoutBuilder)
+void UE5ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLyoutBuilder)
 {
-	IDetailCategoryBuilder& ResetToDefaultCategory= DetailLyoutBuilder.EditCategory(TEXT("UE4EditorCustomize"));
-	ResetToDefaultCategory.AddCustomRow(FText::FromString("UE4EditorCustomize"))
+	IDetailCategoryBuilder& ResetToDefaultCategory= DetailLyoutBuilder.EditCategory(TEXT("UE5EditorCustomize"));
+	ResetToDefaultCategory.AddCustomRow(FText::FromString("UE5EditorCustomize"))
 		.WholeRowWidget
 		[
 			SNew(SVerticalBox)
@@ -40,7 +40,7 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 			.ToolTipText(LOCTEXT("ImportThemeButtonTip", "Import Theme From a file.\nBoth *.UTheme and *.Ini are Supported."))
 			.OnClicked_Lambda([]()
 						  {
-							  FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize").ShowDialogForImport();
+							  FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize").ShowDialogForImport();
 							  return FReply::Handled();
 						  })
 		]
@@ -49,12 +49,12 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 			SNew(SButton)
 			.Text(LOCTEXT("PackageTheme", "Package Current Theme"))
 			.ToolTipText(LOCTEXT("PackageThemeButtonTip","Package Current Theme as a *.UTheme file.\n"
-								 "A UTheme file include all Contents referenced by the ConfigFile in UE4EditorCustomize content floder. You can share it to other people.\n"
+								 "A UTheme file include all Contents referenced by the ConfigFile in UE5EditorCustomize content floder. You can share it to other people.\n"
 								"You can also export only a ini file. But it will not contain any Content."))
 			.HAlign(EHorizontalAlignment::HAlign_Center)
 			.OnClicked_Lambda([]()
 						  {
-							  FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize").ShowDialogForPackageTheme();
+							  FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize").ShowDialogForPackageTheme();
 							  return FReply::Handled();
 						  })
 		]
@@ -66,7 +66,7 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 			.HAlign(EHorizontalAlignment::HAlign_Center)
 			.OnClicked_Lambda([]()
 							  {
-								  FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize").ImportBuiltInTheme();
+								  FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize").ImportBuiltInTheme();
 								  return FReply::Handled();
 							  })
 		]
@@ -81,7 +81,7 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 			.ToolTipText(LOCTEXT("ResetEditorStyleButtonTip", "Reset all settings that in \"Editor Style\" Category"))
 			.OnClicked_Lambda([]()
 						  {
-							  FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize").ResetEditorStyle();
+							  FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize").ResetEditorStyle();
 							  FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("EditorStyleHasBeenReset", "Editor Style has been reset.Restart Editor to take effect."));
 							  return FReply::Handled();
 						  })
@@ -94,7 +94,7 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 			.ToolTipText(LOCTEXT("ResetCoreStyleButtonTip", "Reset all settings that in \"Core Style\" Category"))
 			.OnClicked_Lambda([]()
 						  {
-							  FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize").ResetCoreStyle();
+							  FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize").ResetCoreStyle();
 							  FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("CoreStyleHasBeenReset", "Core Style has been reset.Restart Editor to take effect"));
 							  return FReply::Handled();
 						  })
@@ -107,7 +107,7 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 			.HAlign(EHorizontalAlignment::HAlign_Center)
 			.OnClicked_Lambda([]()
 						  {
-							  FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize").ResetTextStyle();
+							  FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize").ResetTextStyle();
 							  FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("TextStyleHasBeenReset", "Text Style has been reset.Restart Editor to take effect"));
 							  return FReply::Handled();
 						  })
@@ -116,9 +116,9 @@ void UE4ECSettingsCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLy
 		];
 }
 
-/*void UE4ECCustomStyleEditorCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
+/*void UE5ECCustomStyleEditorCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
 {
-	auto& UE4ECModule = FModuleManager::LoadModuleChecked<FUE4EditorCustomizeModule>("UE4EditorCustomize");
+	auto& UE5ECModule = FModuleManager::LoadModuleChecked<FUE5EditorCustomizeModule>("UE5EditorCustomize");
 	auto& CustomStyleCategory = DetailBuilder.EditCategory(TEXT("CustomStyle"));
 	CustomStyleCategory.AddCustomRow(FText::FromString("+"))[
 		SNew(SButton)

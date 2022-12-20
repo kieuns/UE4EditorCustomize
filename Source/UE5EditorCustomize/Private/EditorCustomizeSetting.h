@@ -110,7 +110,7 @@ struct FUMGEditorPalette
 };
 
 USTRUCT()
-struct FUE4ECCustomStyle
+struct FUE5ECCustomStyle
 {
 	GENERATED_USTRUCT_BODY()
 
@@ -198,7 +198,7 @@ struct FUE4ECCustomStyle
 };
 
 /**
- * 
+ *
  */
 UCLASS(config = Editor)
 class UEditorCustomizeSetting : public UObject
@@ -271,7 +271,7 @@ public:
 		FHeaderRowStyle TableView_Header;
 
 	UPROPERTY(Config, EditAnywhere, Category = "Core Style", meta = (DisplayName = "ToolBar.Background"))
-		FSlateBrush ToolBar_Background;	
+		FSlateBrush ToolBar_Background;
 
 	UPROPERTY(Config, EditAnywhere, Category = "Core Style", meta = (DisplayName = "Menu.Background"))
 		FSlateBrush Menu_Background;
@@ -281,7 +281,7 @@ public:
 
 	UPROPERTY(Config, EditAnywhere, Category = "Text Style", meta = (DisplayName = "NormalUnderlinedText"))
 		FTextBlockStyle NormalUnderlinedText;
-	
+
 	UPROPERTY(Config, EditAnywhere, Category = "Text Style", meta = (DisplayName = "SmallText"))
 		FTextBlockStyle SmallText;
 
@@ -328,10 +328,10 @@ public:
 		FTextBlockStyle Log_Normal;
 
 	UPROPERTY(Config,EditAnywhere, Category="Advanced Custom Style (Experimental)", meta = (DisplayName = "Editor Style"))
-		FUE4ECCustomStyle CustomStyleEditor;
+		FUE5ECCustomStyle CustomStyleEditor;
 
 	UPROPERTY(Config, EditAnywhere, Category = "Advanced Custom Style (Experimental)", meta = (DisplayName = "Core Style"))
-		FUE4ECCustomStyle CustomStyleCore;
+		FUE5ECCustomStyle CustomStyleCore;
 
 	UEditorCustomizeSetting();
 
@@ -341,5 +341,5 @@ public:
 	void InitEditorStyle();
 	void InitCoreStyle();
 	void InitTextStyle();
-	void InitCustomStyle(class FSlateStyleSet* SlateStyleSet,FUE4ECCustomStyle& CustomStyle);
+	void InitCustomStyle(class FSlateStyleSet* SlateStyleSet,FUE5ECCustomStyle& CustomStyle);
 };

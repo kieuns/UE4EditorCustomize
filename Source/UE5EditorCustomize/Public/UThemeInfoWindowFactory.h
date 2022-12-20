@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "UE4EditorCustomize.h"
+#include "UE5EditorCustomize.h"
 #include "Widgets/SWindow.h"
 #include "Brushes/SlateImageBrush.h"
 #include "Widgets/Layout/SScrollBox.h"
@@ -10,9 +10,9 @@
 #include "Widgets/Input/SEditableTextBox.h"
 
 /**
- * 
+ *
  */
-class UE4EDITORCUSTOMIZE_API UThemeInfoWindowFactory
+class UE5EDITORCUSTOMIZE_API UThemeInfoWindowFactory
 {
 	TSharedPtr<SWindow> UThemeInfoWindow;
 	bool InfoEditable;

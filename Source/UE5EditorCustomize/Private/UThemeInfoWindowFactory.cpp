@@ -16,7 +16,7 @@
 #include "EditorStyleSet.h"
 #include "Misc/FileHelper.h"
 
-#define LOCTEXT_NAMESPACE "FUE4EditorCustomizeModule"
+#define LOCTEXT_NAMESPACE "FUE5EditorCustomizeModule"
 
 #define ADD_INFO_ITEM(INFO_TEXTBOX,INFO_NAME,EDITABLE,INFO_CHANGED_DELEGATE) \
 + SVerticalBox::Slot().AutoHeight()\
@@ -175,7 +175,7 @@ FReply UThemeInfoWindowFactory::OnThemeIconMouseDown(const FGeometry& Geometry, 
 
 FString UThemeInfoWindowFactory::GetPluginResourcePath(FString ResourceFileName)
 {
-	return IPluginManager::Get().FindPlugin(TEXT("UE4EditorCustomize"))->GetBaseDir() + FString("/Resources/") + ResourceFileName;
+	return IPluginManager::Get().FindPlugin(TEXT("UE5EditorCustomize"))->GetBaseDir() + FString("/Resources/") + ResourceFileName;
 }
 
 bool UThemeInfoWindowFactory::ShowModalDialog()
@@ -322,7 +322,7 @@ UTexture2D* UThemeInfoWindowFactory::GetLocalTexture(TArray<uint8> &ProvideData,
 		imageWrapper = imageWrapperModule.CreateImageWrapper(EImageFormat::JPEG);
 	else if (ImageType.Equals("PNG", ESearchCase::IgnoreCase))
 	{
-		//PixelFormat = EPixelFormat::PF_R8G8B8A8;    
+		//PixelFormat = EPixelFormat::PF_R8G8B8A8;
 		//This Code will couse Error color of Image while import UTheme.
 		//But It must be used while package.
 		imageWrapper = imageWrapperModule.CreateImageWrapper(EImageFormat::PNG);

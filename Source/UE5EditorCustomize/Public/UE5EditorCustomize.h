@@ -18,7 +18,7 @@ struct FUThemeInfo_v0
 	TArray<FString> tmpImagePath;
 };
 
-class FUE4EditorCustomizeModule : public IModuleInterface
+class FUE5EditorCustomizeModule : public IModuleInterface
 {
 	enum class AssetType : uint8
 	{

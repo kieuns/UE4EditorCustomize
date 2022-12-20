@@ -3,20 +3,22 @@
 using UnrealBuildTool;
 using System.IO;
 
-public class UE4EditorCustomize : ModuleRules
+public class UE5EditorCustomize : ModuleRules
 {
-	public UE4EditorCustomize(ReadOnlyTargetRules Target) : base(Target)
+	public UE5EditorCustomize(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
-        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
-        PublicIncludePaths.AddRange(
+
+		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
+		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
+
+		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
 			}
 			);
-				
-		
+
+
 		PrivateIncludePaths.AddRange(
 			new string[] {
 				// ... add other private include paths required here ...
@@ -31,8 +33,8 @@ public class UE4EditorCustomize : ModuleRules
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
-			
-		
+
+
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
@@ -40,17 +42,17 @@ public class UE4EditorCustomize : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+                "EditorFramework",
                 "EditorStyle",
 				"UnrealEd",
                 "DesktopPlatform",
                 "Projects",
                 "AssetTools",
                 "zlib"
-				// ... add private dependencies that you statically link with here ...	
 			}
 			);
-		
-		
+
+
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]
 			{
