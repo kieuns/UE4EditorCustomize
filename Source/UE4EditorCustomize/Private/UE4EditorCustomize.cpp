@@ -30,7 +30,7 @@
 #include <AssetToolsModule.h>
 #include <../Launch/Resources/Version.h>
 #include <IAssetTools.h>
-#include <Editor\UnrealEd\Classes\Factories\FontFileImportFactory.h>
+#include "Factories/FontFileImportFactory.h"
 
 #define LOCTEXT_NAMESPACE "FUE4EditorCustomizeModule"
 
